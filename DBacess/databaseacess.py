@@ -1,12 +1,33 @@
 from tracemalloc import Statistic
-from turtle import mode
 import mysql.connector
 import statistics
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
 
 con = mysql.connector.connect(host='localhost',database='dadoshospitalares',user='root',password='')
-
 cursor = con.cursor()
+
+meses = ["janeiro", "fevereiro", "marco", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+dados = []
+
+for mes in meses:
+    cursor.execute("SELECT nascidosVivos FROM {};".format(mes))
+    dados_mes = cursor.fetchall()[0][0] 
+    dados.append(dados_mes)
+
+X = np.array(dados[:-1]).reshape(-1, 1) 
+y = np.array(dados[1:]).reshape(-1, 1) 
+
+model = LinearRegression()
+
+model.fit(X, y)
+
+previsao_proximo_ano = model.predict([[dados[-1]]])
+
+print("Previsão de nascidos vivos para dezembro de 2024:", previsao_proximo_ano[0][0])
+
+
 cursor.execute("select * from janeiro;")
 Janeiro = cursor.fetchall();
 cursor.execute("select * from fevereiro;")
