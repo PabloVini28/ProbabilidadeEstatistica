@@ -8,7 +8,7 @@
 
 # 0 = 0
 
-print('ta provado, confia')
+print('resolução no comentário da questão!')
 
 # 3 - prove fazendo as contas que: //// supondo que n um real qualquer e p inteiro não negativo
 
@@ -19,7 +19,7 @@ print('ta provado, confia')
 
 # 0 = 0
 
-print('ta provado, confia')
+print('resolução no comentário da questão!')
 
 # 4 - Usando a relação de Stifel, escreva as sete primeiras linhas do Triângulo de Pascal.
 
@@ -36,7 +36,7 @@ print('ta provado, confia')
 # 1 5 10 10 5 1
 # 1 6 15 20 15 6 1
 
-print('ta provado, confia')
+print('resolução no comentário da questão!')
 
 # 6 - Dado que um conjunto possui 512 subconjuntos, qual é o número de elementos no conjunto?
 
